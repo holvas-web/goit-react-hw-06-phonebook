@@ -12,10 +12,11 @@ import 'modern-normalize';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
+  // const contacts = useSelector(state => state.contacts.contacts);
+  const state = useSelector(state => state);
   const filter = useSelector(state => state.contacts.filter);
 
-  console.log("Contacts:", contacts); 
+  console.log("Contacts:", state); 
   console.log("Filter:", filter); 
 
   const handleAddContact = (name, number) => {
@@ -30,7 +31,7 @@ export const App = () => {
     dispatch(updateFilter(event.target.value));
   };
 
-  const filteredContacts = contacts.contacts.filter(contact =>
+  const filteredContacts = state.contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
