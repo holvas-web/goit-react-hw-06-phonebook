@@ -27,7 +27,7 @@ export const App = () => {
     dispatch(updateFilter(event.target.value));
   };
 
-  const filteredContacts = state.contacts.contacts.filter(contact =>
+  const filteredContacts = state.contacts.filter(contact =>
     contact.name.toLowerCase().includes(state.contacts.filter.toLowerCase())
   );
 
