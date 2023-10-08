@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from '../../redux/contactsSlice';
 import { nanoid } from 'nanoid';
-import {addContact} from '../../redux/contactsSlice'; 
-import { Form, Label, Input, Button } from './ContactForm.styled'
 
 export function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
+  const state = useSelector(state => state);
 
   const handleNameChange = event => {
     setName(event.target.value);
@@ -18,10 +17,10 @@ export function ContactForm() {
     setNumber(event.target.value);
   };
 
-  const handleSubmit = event => {
+  const handleAddContact = event => {
     event.preventDefault();
 
-    const isDuplicate = contacts.some(
+    const isDuplicate = state.contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
 
@@ -37,26 +36,26 @@ export function ContactForm() {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Label>
+    <form onSubmit={handleAddContact}>
+      <label>
         Name:
-        <Input
+        <input
           type="text"
           value={name}
           onChange={handleNameChange}
           required
         />
-      </Label>
-      <Label>
+      </label>
+      <label>
         Number:
-        <Input
+        <input
           type="text"
           value={number}
           onChange={handleNumberChange}
           required
         />
-      </Label>
-      <Button type="submit">Add Contact</Button>
-    </Form>
+      </label>
+      <button type="submit">Add Contact</button>
+    </form>
   );
 }
