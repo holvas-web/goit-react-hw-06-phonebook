@@ -1,54 +1,80 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const Button = styled.button`
-        background-color: yellow;
-        align-items: center;
-
-        margin: 10px 10px;
-        padding: 2px 10px;
-
-        border-radius: 4px;
-        box-shadow: 0px 2px 6px 0px lawngreen;
-        border: 2px solid lawngreen;
-
-        transition: all 300ms ease-in-out;
-
-        &:hover {
-            transform: scale(1.03);
-            background-color: #09f;
-            border: 1px solid yellow;
-        }
-`;
-
-export const List = styled.ul `
-    width: 50%;
-    margin: 0 auto;
-    padding: 20px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-
-    border: 2px solid yellow;
-    border-radius: 8px;
-    box-shadow: 0px 2px 16px 0px lawngreen;
+export const Wrapper = styled.div`
     
-    margin: 0 auto;
-    list-style: none;
-    font-size: 16px;
+   width: 100%;
 `;
 
-export const Item = styled.li `
-    font-size: 14px;
-    line-height: 1.2;
+export const ListStyled = styled.ul`
+ 
+  // align-items: center;
+  // justify-content: space-between;
+  // flex-direction: column;
+  // margin: 0;
+  // padding: 0;
+  // gap: 15px;
+  
+`;
+
+export const ItemStyled = styled.li`
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
-    margin: 5px;
-    padding-left: 5px;
-    padding-right: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    // margin-left: 20px;
+    padding: 10px;  
+    // gap: 15px;
 `;
 
-export const Header = styled.h2`
-    padding-top: 20px;
+export const DeleteButton = styled.button`
+
+  min-width: 75px;
+
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #A9A9A9;
+  box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.55);
+  cursor: pointer;
+  background: transparent;
+
+  &:focus,
+  &:hover {
+    border: 2px solid #8B0000;
+    background: #8B0000;
+    color: black;
+
+  }
+`;
+
+export const ResetBtn = styled.button`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    min-width: 100px;
+    height: 30px;
+    margin: 10px 0 0 0;
+
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #A9A9A9;
+    box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.55);
+    cursor: pointer;
+    background: transparent;
+
+    &:focus,
+    &:hover {
+    border: 2px solid #2F4F4F;
+    background: #2F4F4F;
+    color: black;
+
+    }
+
+    svg {
+        margin-right: 20px;
+    }
 `;

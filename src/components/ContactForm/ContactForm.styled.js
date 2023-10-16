@@ -1,75 +1,82 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import {Form, Field, } from 'formik';
 
-export const Container = styled.div`
-    background: black;
-    text-align: center;
-    color: lawngreen;
-    padding: 50px;
-    font-family: math ,sans-serif;
-    font-size: 20px;
+export const Styleform = styled(Form)`
+
+width: 100%
 `;
 
-export const Form = styled.form`
-    max-width: 50%;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    border: 1px solid yellow;
-    box-shadow: 0px 2px 16px 0px lawngreen;
-    border-radius: 8px;
-    
-    padding: 30px 20px;
-    margin: 0 auto;
+export const HeroTitleStyled = styled.h1`
+margin: auto;
+text-align: center;
+font-size: 30px;
+font-weight: 500;
+color: #2F4F4F;
+text-shadow: 3px 3px 3px rgba(0,0,0,0.55);
 `;
 
-export const Label = styled.label`
-    display: flex;
-    flex-direction: column;
-
-    font-weight: 600;
-    line-height: 1.10;
-    letter-spacing: 0.2px;
-    color: lawngreen;
-    margin: 0 auto;
-    padding-top: 20px;
+export const StyledField = styled(Field)`
+margin: auto;
+padding: 4px; 
+width: 100%;
+border: 2px solid #A9A9A9;
+border-radius: 4px;
+box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.55);
+background: transparent;
+&:focus,
+&:hover,
+&:active {
+  border: 2px solid #2F4F4F;
+  background: rgba(245, 245, 220, 0.75);
+  outline: transparent;
+}
 `;
 
-export const Input = styled.input`
-    appearance: none;
-    border: none;
-    outline: none;
-    border-bottom: 3px solid #757575;
-    background-color: #0000;
-    border-radius: 0 16px 0 16px;
+export const StyledLabel = styled.p`
+font-size: 14px;
+font-weight: 400;
+margin: 15px 0 0 5px;
 
-    margin-bottom: 25px;
-    margin-left: 15px;
-    padding: 8px 10px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.11;
-    letter-spacing: 0.72px;
-    color: #757575;
 `;
 
-export const Button = styled.button`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+export const ErrorMessageStyled = styled.div`
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+`;
 
-    background-color: yellow;
-    padding: 10px 30px;
+export const SubmitBtn = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
 
-    border-radius: 4px;
-    box-shadow: 0px 2px 6px 0px lawngreen;
-    border: 1px solid lawngreen;
+  font-size: 14px;
+  font-weight: 400;
 
-    transition: all 300ms ease-in-out;
+  min-width: 100px;
+  height: 30px;
+  margin: 15px 0 0 0;
+ 
+  padding: 5px;
+  
+  border-radius: 5px;
+  
+  border: 2px solid #A9A9A9;
+  box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.55);
+  cursor: pointer;
+  background: transparent;
 
-    &:hover {
-        transform: scale(1.03);
-        background-color: #09f;
-    }
+  &:focus,
+  &:hover {
+    border: 2px solid #2F4F4F;
+    background: #2F4F4F;
+    color: black;
+
+  }
+
+  svg {
+    height: 1.1em;
+    width: 1.1em;
+    margin-right: 5px;
+  }
 `;

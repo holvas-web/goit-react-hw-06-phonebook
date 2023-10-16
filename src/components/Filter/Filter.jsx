@@ -1,23 +1,29 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import setFilter from '../../redux/contactsSlice';
-import { Input } from 'components/ContactForm/ContactForm.styled';
+import {WrapperFilter, TitleStyled, TextStyledFilter, InputStyled} from './Filter.styled';
+import {ImSearch, ImUsers} from "react-icons/im";
+import { useDispatch, useSelector } from 'react-redux';
+import { getFilter } from 'redux/selectors';
+import {setFilter} from '../../redux/filterSlice';
 
-export function Filter() {
-  const filter = useSelector(state => state.filter);
+const icons = {
+    list: <ImUsers/>,
+    search: <ImSearch/>,
+};
+
+export const Filter = () => {
+  const filter = useSelector(getFilter);
   const dispatch = useDispatch();
-
-  const handleFilterChange = event => {
-    dispatch(setFilter(event.target.value));
+  const changeFilter = evt => {
+dispatch(setFilter(evt.target.value.toLowerCase().trim()));
+  }
+    return (
+      <WrapperFilter>
+        <TitleStyled>{icons.list} Contacts</TitleStyled>
+        <TextStyledFilter>{icons.search} Find contacts by name</TextStyledFilter>
+        <InputStyled 
+          type="text"
+          value={filter}
+          onChange={changeFilter}
+        ></InputStyled>
+      </WrapperFilter>
+    );
   };
-
-  return (
-    <Input
-      type="text"
-      value={filter}
-      onChange={handleFilterChange}
-      placeholder="Search by name"
-    />
-  );
-}
-
