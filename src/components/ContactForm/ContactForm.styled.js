@@ -1,83 +1,48 @@
 import styled from 'styled-components';
-import {Form, Field, } from 'formik';
+import { Form, Field, ErrorMessage } from 'formik';
 
-export const Styleform = styled(Form)`
+export const StyledForm = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
-width: 100%
-
+  padding: 16px;
+  margin-bottom: 32px;
+  border: 2px solid yellow;
+  border-radius: 4px;
 `;
 
-export const HeroTitleStyled = styled.h1`
-margin: auto;
-text-align: center;
-font-size: 30px;
-font-weight: 500;
-color: #2F4F4F;
-text-shadow: 3px 3px 3px rgba(0,0,0,0.55);
+export const FormItem = styled.label`
+  display: flex;
+  flex-direction: column;
 `;
 
-export const StyledField = styled(Field)`
-margin: auto;
-padding: 4px; 
-width: 100%;
-border: 2px solid #A9A9A9;
-border-radius: 4px;
-box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.55);
-background: transparent;
-&:focus,
-&:hover,
-&:active {
-  border: 2px solid #2F4F4F;
-  background: rgba(245, 245, 220, 0.75);
-  outline: transparent;
-}
-`;
-
-export const StyledLabel = styled.p`
-font-size: 14px;
-font-weight: 400;
-margin: 15px 0 0 5px;
-
-`;
-
-export const ErrorMessageStyled = styled.div`
+export const ErrMessage = styled(ErrorMessage)`
   color: red;
-  font-size: 14px;
-  margin-top: 4px;
 `;
 
 export const SubmitBtn = styled.button`
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 4px 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: #fff;
+  border-color: transparent;
+  width: fit-content;
+  border-radius: 4px;
 
-  font-size: 14px;
-  font-weight: 400;
-
-  min-width: 100px;
-  height: 30px;
-  margin: 15px 0 0 0;
- 
-  padding: 5px;
-  
-  border-radius: 5px;
-  
-  border: 2px solid #A9A9A9;
-  box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.55);
-  cursor: pointer;
-  background: transparent;
-
-  &:focus,
-  &:hover {
-    border: 2px solid #2F4F4F;
-    background: #2F4F4F;
-    color: black;
-
+  &:hover,
+  &:focus {
+    box-shadow: yellow 0px 0px 0px 2px;
   }
+`;
 
-  svg {
-    height: 1.1em;
-    width: 1.1em;
-    margin-right: 5px;
+export const StyledField = styled(Field)`
+  border-color: #eef0f2;
+  border-style: solid;
+  width: 200px;
+  border-radius: 2px;
+
+  &:hover,
+  &:focus {
+    box-shadow:yellow 0px 0px 0px 2px;
   }
 `;
