@@ -3,7 +3,8 @@ import {Form, Field, } from 'formik';
 
 export const Styleform = styled(Form)`
 
-width: 100%;
+width: 100%
+
 `;
 
 export const HeroTitleStyled = styled.h1`

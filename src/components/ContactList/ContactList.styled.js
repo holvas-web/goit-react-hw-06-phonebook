@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
    width: 100%;
 `;
 
+
 export const ListStyled = styled.ul`
  
   // align-items: center;
