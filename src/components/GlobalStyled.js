@@ -12,12 +12,13 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    // background: linear-gradient(211deg, rgba(75,20,20,1) 0%, rgba(224,171,173,1) 39%, rgba(216,163,165,1) 57%, rgba(253,215,215,1) 73%, rgba(255,255,255,1) 100%) no-repeat fixed;
-
-    background-image: url(https://e0.pxfuel.com/wallpapers/686/271/desktop-wallpaper-nature-berries-plant-macro-rowan.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+   background: 
+    linear-gradient(211deg, 
+    rgba(75,20,20,1) 0%, 
+    rgba(224,171,173,1) 39%, 
+    rgba(216,163,165,1) 57%, 
+    rgba(253,215,215,1) 73%, 
+    rgba(255,255,255,1) 100%) no-repeat fixed;
   }
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

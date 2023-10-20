@@ -1,9 +1,9 @@
-import { Filter } from '../Filter/Filter';
-import {ListStyled,  ItemStyled,   DeleteButton, ResetBtn, Wrapper} from './ContactList.styled';
+// import { Filter } from '../Filter/Filter';
+import {ListStyled,  ItemStyled,   DeleteButton, Wrapper} from './ContactList.styled';
 import {ImUserMinus, ImLoop2} from "react-icons/im";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact,resetDeletedContacts} from 'redux/contactsSlice';
+import { deleteContact } from 'redux/contactsSlice';
 import { getFilteredContacts } from 'redux/selectors';
 
 
@@ -22,19 +22,8 @@ export const ContactList = () => {
     dispatch(deleteContact(contactId));
   };
 
-const resetChanges = () => {
-  dispatch(resetDeletedContacts());
-}
-
-if (!Array.isArray(filteredContacts) || filteredContacts.length === 0) {
-  console.log(filteredContacts);
-  return null;
-}
   return (
     <Wrapper>
-      
-      <Filter />
-      
       <ListStyled>
         {filteredContacts.map(({ name, number, id }) => (
           <ItemStyled key={id}>
@@ -45,7 +34,6 @@ if (!Array.isArray(filteredContacts) || filteredContacts.length === 0) {
          
         ))}
       </ListStyled>
-      <ResetBtn onClick={resetChanges}>{icon.reset}Reset</ResetBtn>
     </Wrapper>
   );
 };
